@@ -1,6 +1,6 @@
 --Creating Customer table--
 CREATE TABLE Customer(
-    Customer_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    Customer_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT (NEWID()),
     First_name NVARCHAR(50),
     Last_name NVARCHAR(50) NOT NULL,
     Email NVARCHAR(30) NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE Customer(
 
 --Creating Address table--
 CREATE TABLE Address(
-    Address_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    Address_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT (NEWID()),
     Street_number int NOT NULL,
     Street_name NVARCHAR(50) NOT NULL,
     County NVARCHAR(30) NOT NULL,
@@ -23,14 +23,14 @@ CREATE TABLE Address(
 
 --Creating Category table--
 CREATE TABLE Category(
-    Category_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    Category_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT (NEWID()),
     Category_name NVARCHAR(30) NOT NULL
 );
 
 
 --Creating Product table--
 CREATE TABLE Product(
-    Product_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    Product_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT (NEWID()),
     Product_name NVARCHAR(50) NOT NULL,
     Stock_quantity INT NOT NULL,
     Price DECIMAL(16,2) NOT NULL
@@ -47,7 +47,7 @@ CREATE TABLE Product_Category(
 
 --Creating Dietary_Requirement table--
 CREATE TABLE Dietary_Requirement(
-    D_Requirement_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    D_Requirement_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT (NEWID()),
     Category_ID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Category(Category_ID),
     Type_of NVARCHAR(30) 
 );
@@ -55,7 +55,7 @@ CREATE TABLE Dietary_Requirement(
 
 --Creating Order table--
 CREATE TABLE [Order](
-    Order_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    Order_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT (NEWID()),
     Order_date DATETIME NOT NULL,
     Total_products INT NOT NULL,
     Total_price DECIMAL(16,2) NOT NULL,
