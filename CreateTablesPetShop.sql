@@ -49,11 +49,19 @@ CREATE TABLE Product_Category(
 );
 
 
---Creating Dietary_Requirement table--
+--Creating Dietary_Requirement table-- (redesigned/change of relationship)
 CREATE TABLE Dietary_Requirement(
     D_Requirement_ID UNIQUEIDENTIFIER NOT NULL PRIMARY KEY DEFAULT (NEWID()),
-    Category_ID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Category(Category_ID),
     Type_of NVARCHAR(30) 
+);
+
+
+--(creating this junction table to establish many-to-many relationship between Dietary_Requirement table and Product table)
+--Creating Dietary_Product table-- 
+CREATE TABLE Dietary_Product(
+    D_Requirement_ID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Dietary_Requirement(D_Requirement_ID),
+    Product_ID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Product(Product_ID),
+    PRIMARY KEY (D_Requirement_ID, Product_ID)
 );
 
 

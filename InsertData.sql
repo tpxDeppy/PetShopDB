@@ -28,7 +28,7 @@ VALUES ('Food'), ('Toy'), ('Bed');
     
 
 
---Inserting data into Dietary_Requirements table--  NOT INSERTED YET!
+--Inserting data into Dietary_Requirements table-- 
 INSERT INTO Dietary_Requirement(Type_of)
 VALUES 
     ('none'), 
@@ -38,6 +38,30 @@ VALUES
     ('Soy free'),
     ('Nut free');
 
+
+
+--Inserting data into Dietary_Product table--
+INSERT INTO Dietary_Product(D_Requirement_ID, Product_ID)
+VALUES
+    --none--
+    ('464a9674-8cb9-4651-b9c6-640f4e4014de', '01e6fcd0-cfd0-459b-a5bb-2f686a80ee46'),
+    --Vegan--
+    ('5d123e49-6319-4c3c-b47b-ef111f296e01','5ad80e25-521d-4253-ac46-5a07af68e156'),
+    ('5d123e49-6319-4c3c-b47b-ef111f296e01','0bb3dca2-987c-46fa-986e-c209912ffcdd'),
+    ('5d123e49-6319-4c3c-b47b-ef111f296e01','84c18133-de0d-4373-80eb-1a2ef7022e5c'),
+    ('5d123e49-6319-4c3c-b47b-ef111f296e01','e322290c-ea0b-4097-ab32-120edfa7a7b5'),
+    --Wheat free--
+    ('5c111667-370c-4f7c-8aa2-75593fc5a16e','84c18133-de0d-4373-80eb-1a2ef7022e5c'),
+    ('5c111667-370c-4f7c-8aa2-75593fc5a16e','e322290c-ea0b-4097-ab32-120edfa7a7b5'),
+    --Gluten free--
+    ('adb4562d-d326-4981-b741-fe4d3327eb83','84c18133-de0d-4373-80eb-1a2ef7022e5c'),
+    ('adb4562d-d326-4981-b741-fe4d3327eb83','e322290c-ea0b-4097-ab32-120edfa7a7b5'),
+    --Soy free--
+    ('9e271b92-6a1b-4f51-8ea4-4285e4fb4fe2','84c18133-de0d-4373-80eb-1a2ef7022e5c'),
+    ('9e271b92-6a1b-4f51-8ea4-4285e4fb4fe2','e322290c-ea0b-4097-ab32-120edfa7a7b5'),
+    --Nut free--
+    ('557f0992-0a01-4711-97bf-049a38df2a4b','84c18133-de0d-4373-80eb-1a2ef7022e5c'),
+    ('557f0992-0a01-4711-97bf-049a38df2a4b','e322290c-ea0b-4097-ab32-120edfa7a7b5');
 
 
 
