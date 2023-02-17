@@ -7,6 +7,8 @@ CREATE TABLE Customer(
     Phone_number NVARCHAR(20) NOT NULL
 );
 
+ALTER TABLE Customer ALTER COLUMN Email NVARCHAR(50) NOT NULL;
+
 
 --Creating Address table--
 CREATE TABLE Address(
@@ -19,6 +21,8 @@ CREATE TABLE Address(
     Country NVARCHAR(30) NOT NULL,
     Customer_ID UNIQUEIDENTIFIER FOREIGN KEY REFERENCES Customer(Customer_ID)
 );
+
+ALTER TABLE Address ALTER COLUMN County NVARCHAR(30);
 
 
 --Creating Category table--
