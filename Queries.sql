@@ -59,12 +59,12 @@ WHERE Last_name = 'Apple';
 -- - selecting a list of products of type food
 
 SELECT TOP(100)
-    Product_name AS [Product name],
+    Product_name,
     Category_name AS [Type]
 FROM Product P
 INNER JOIN Product_Category PC ON P.Product_ID = PC.Product_ID
 INNER JOIN Category C ON PC.Category_ID = C.Category_ID
-WHERE Category_name LIKE 'Food'; 
+WHERE Category_name = 'Food'; 
 
 
 
