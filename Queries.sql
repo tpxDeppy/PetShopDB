@@ -4,13 +4,13 @@
 --     - how would you order this by order date desc
 
 SELECT TOP(100) 
-    Order_ID AS [Order ID],
-    Order_date AS [Date ordered],
-    Total_products AS [Total products],
-    Total_price AS [Total cost],
-    Order_status AS [Order status],
-    Order_modified AS [Last modified],
-    Customer_ID AS [Customer ID]
+    Order_ID,
+    Order_date,
+    Total_products,
+    Total_price,
+    Order_status,
+    Order_modified,
+    Customer_ID
 FROM [Order]
 ORDER BY Order_date DESC;
 
@@ -18,28 +18,28 @@ ORDER BY Order_date DESC;
 
 -- - selecting a list of one users orders
 
-SELECT Order_ID AS [Order ID],
-    Order_date AS [Date ordered],
-    Total_products AS [Total products],
-    Total_price AS [Total cost],
-    Order_status AS [Order status],
-    Order_modified AS [Last modified],
-    Customer_ID AS [Customer ID]
+SELECT Order_ID,
+    Order_date,
+    Total_products,
+    Total_price,
+    Order_status,
+    Order_modified,
+    Customer_ID
 FROM [Order] 
-WHERE Customer_ID LIKE 'b2e99c1d-2e1f-4dea-ac1a-cf2bac749851';
+WHERE Customer_ID = 'b2e99c1d-2e1f-4dea-ac1a-cf2bac749851';
 
 
 --OR--
-SELECT Order_ID AS [Order ID],
-    Last_name AS [Last name],
-    Order_date AS [Date ordered],
-    Total_products AS [Total products],
-    Total_price AS [Total cost],
-    Order_status AS [Order status],
-    Order_modified AS [Last modified]
+SELECT Order_ID,
+    Last_name,
+    Order_date,
+    Total_products,
+    Total_price,
+    Order_status,
+    Order_modified
 FROM [Order] O
 INNER JOIN Customer C ON O.Customer_ID = C.Customer_ID
-WHERE Last_name LIKE 'Millhouse';
+WHERE Last_name = 'Millhouse';
 
 
 
@@ -52,7 +52,7 @@ FROM [Order] O
 INNER JOIN Product_Order PO ON O.Order_ID = PO.Order_ID
 INNER JOIN Customer C ON O.Customer_ID = C.Customer_ID
 INNER JOIN Product P ON PO.Product_ID = P.Product_ID
-WHERE Last_name LIKE 'Apple';
+WHERE Last_name = 'Apple';
 
 
 
@@ -71,9 +71,9 @@ WHERE Category_name LIKE 'Food';
 -- - selecting a list of all vegan food products
 
 SELECT 
-    Product_name AS [Product name],
+    Product_name,
     Type_of AS [Dietary Requirement]
 FROM Dietary_Requirement DR
 INNER JOIN Dietary_Product DP ON DR.D_Requirement_ID = DP.D_Requirement_ID 
 INNER JOIN Product P ON DP.Product_ID = P.Product_ID
-WHERE Type_of LIKE 'Vegan';
+WHERE Type_of = 'Vegan';
